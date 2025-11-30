@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: quran-app-backend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_vfKRhDsS1Up4@ep-winter-moon-adjxlksf-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+      - key: JWT_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        value: https://frontend-2ckhm0gfh-alis-projects-e4ae3535.vercel.app
